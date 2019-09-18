@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 /* Copyright (c) 2013-2015, 2017-2019 The Linux Foundation. All rights reserved.
+=======
+/* Copyright (c) 2013-2015, 2017-2018 The Linux Foundation. All rights reserved.
+ * Copyright (C) 2019 XiaoMi, Inc.
+>>>>>>> ed1d7fc... Kernel: Xiaomi kernel changes for Redmi Note 8 Android P
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
