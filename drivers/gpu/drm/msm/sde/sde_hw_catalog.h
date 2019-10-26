@@ -1101,6 +1101,7 @@ struct sde_mdss_cfg {
 	bool has_src_split;
 	bool has_cdp;
 	bool has_dim_layer;
+	bool has_base_layer;
 	bool has_wb_ubwc;
 	bool has_cwb_support;
 	u32 ubwc_version;
