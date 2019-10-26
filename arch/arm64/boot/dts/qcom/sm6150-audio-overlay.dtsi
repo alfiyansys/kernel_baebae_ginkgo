@@ -296,7 +296,7 @@
 		qcom,lpi-gpios;
 	};
 
-	wsa_spkr_en1: wsa_spkr_en1_pinctrl {
+	/* wsa_spkr_en1: wsa_spkr_en1_pinctrl {
 		compatible = "qcom,msm-cdc-pinctrl";
 		pinctrl-names = "aud_active", "aud_sleep";
 		pinctrl-0 = <&spkr_1_sd_n_active>;
@@ -308,7 +308,7 @@
 		pinctrl-names = "aud_active", "aud_sleep";
 		pinctrl-0 = <&spkr_2_sd_n_active>;
 		pinctrl-1 = <&spkr_2_sd_n_sleep>;
-	};
+	}; */
 
 	wcd9xxx_intc: wcd9xxx-irq {
 		status = "disabled";
