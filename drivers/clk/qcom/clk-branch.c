@@ -125,20 +125,10 @@ static int clk_branch_toggle(struct clk_hw *hw, bool en,
 	} else {
 		clk_disable_regmap(hw);
 	}
-<<<<<<< HEAD
-
-	/*
-	 * Make sure enable/disable request goes through before waiting
-	 * for CLK_OFF status to get updated.
-	 */
-	mb();
-
-=======
          /* Make sure enable/disable request goes through before waiting 
           * for CLK_OFF status to get updated. 
          */ 
          mb();
->>>>>>> ed1d7fc... Kernel: Xiaomi kernel changes for Redmi Note 8 Android P
 	return clk_branch_wait(br, en, check_halt);
 }
 
@@ -150,13 +140,7 @@ static int clk_branch_enable(struct clk_hw *hw)
 static int clk_cbcr_set_flags(struct regmap *regmap, unsigned int reg,
 				unsigned long flags)
 {
-<<<<<<< HEAD
-	u32 cbcr_val = 0;
-	u32 cbcr_mask;
-	int ret;
-=======
 	//u32 cbcr_val;
->>>>>>> ed1d7fc... Kernel: Xiaomi kernel changes for Redmi Note 8 Android P
 
 	//regmap_read(regmap, reg, &cbcr_val);
         u32 cbcr_val = 0; 
@@ -164,24 +148,6 @@ static int clk_cbcr_set_flags(struct regmap *regmap, unsigned int reg,
         int ret;
 	switch (flags) {
 	case CLKFLAG_PERIPH_OFF_SET:
-<<<<<<< HEAD
-		cbcr_val = cbcr_mask = BIT(12);
-		break;
-	case CLKFLAG_PERIPH_OFF_CLEAR:
-		cbcr_mask = BIT(12);
-		break;
-	case CLKFLAG_RETAIN_PERIPH:
-		cbcr_val = cbcr_mask = BIT(13);
-		break;
-	case CLKFLAG_NORETAIN_PERIPH:
-		cbcr_mask = BIT(13);
-		break;
-	case CLKFLAG_RETAIN_MEM:
-		cbcr_val = cbcr_mask = BIT(14);
-		break;
-	case CLKFLAG_NORETAIN_MEM:
-		cbcr_mask = BIT(14);
-=======
 	//	cbcr_val |= BIT(12);
                 cbcr_val = cbcr_mask = BIT(12);
 		break;
@@ -204,23 +170,15 @@ static int clk_cbcr_set_flags(struct regmap *regmap, unsigned int reg,
 	case CLKFLAG_NORETAIN_MEM:
 	//	cbcr_val &= ~BIT(14);
                 cbcr_mask = BIT(14);
->>>>>>> ed1d7fc... Kernel: Xiaomi kernel changes for Redmi Note 8 Android P
 		break;
 	default:
 		return -EINVAL;
 	}
 
-<<<<<<< HEAD
-	ret = regmap_update_bits(regmap, reg, cbcr_mask, cbcr_val);
-	if (ret)
-		return ret;
-
-=======
 	//regmap_write(regmap, reg, cbcr_val);
           ret = regmap_update_bits(regmap, reg, cbcr_mask, cbcr_val); 
           if (ret) 
           return ret;
->>>>>>> ed1d7fc... Kernel: Xiaomi kernel changes for Redmi Note 8 Android P
 	/* Make sure power is enabled/disabled before returning. */
 	mb();
 	udelay(1);
