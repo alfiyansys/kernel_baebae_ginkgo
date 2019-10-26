@@ -3744,11 +3744,7 @@ static int msm_isp_request_frame(struct vfe_device *vfe_dev,
 		(stream_info->undelivered_request_cnt <=
 			MAX_BUFFERS_IN_HW)
 		) {
-<<<<<<< HEAD
-		pr_debug("%s:%d invalid time to request frame %d try drop_reconfig\n",
-=======
 		trace_printk("%s:%d invalid time to request frame %d try drop_reconfig\n",
->>>>>>> ed1d7fc... Kernel: Xiaomi kernel changes for Redmi Note 8 Android P
 			__func__, __LINE__, frame_id);
 		vfe_dev->isp_page->drop_reconfig = 1;
 		return 0;
@@ -3759,11 +3755,7 @@ static int msm_isp_request_frame(struct vfe_device *vfe_dev,
 			(stream_info->undelivered_request_cnt <=
 				MAX_BUFFERS_IN_HW)) {
 		vfe_dev->isp_page->drop_reconfig = 1;
-<<<<<<< HEAD
-		pr_debug("%s: vfe_%d request_frame %d cur frame id %d pix %d try drop_reconfig\n",
-=======
 		trace_printk("%s: vfe_%d request_frame %d cur frame id %d pix %d try drop_reconfig\n",
->>>>>>> ed1d7fc... Kernel: Xiaomi kernel changes for Redmi Note 8 Android P
 			__func__, vfe_dev->pdev->id, frame_id,
 			vfe_dev->axi_data.src_info[VFE_PIX_0].frame_id,
 			vfe_dev->axi_data.src_info[VFE_PIX_0].active);
@@ -3799,10 +3791,7 @@ static int msm_isp_request_frame(struct vfe_device *vfe_dev,
 			__func__, __LINE__, vfe_dev->pdev->id, frame_id,
 			stream_info->activated_framedrop_period,
 			stream_info->stream_id);
-<<<<<<< HEAD
-=======
 
->>>>>>> ed1d7fc... Kernel: Xiaomi kernel changes for Redmi Note 8 Android P
 		vfe_dev->isp_page->drop_reconfig = 1;
 		return 0;
 	}
