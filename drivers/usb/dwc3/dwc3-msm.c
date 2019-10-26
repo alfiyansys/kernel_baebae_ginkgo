@@ -3438,15 +3438,10 @@ static int dwc_dpdm_cb(struct notifier_block *nb, unsigned long evt, void *p)
 	case REGULATOR_EVENT_DISABLE:
 		dev_dbg(mdwc->dev, "%s: disable state:%s\n", __func__,
 				dwc3_drd_state_string(mdwc->drd_state));
-<<<<<<< HEAD
-		if (mdwc->drd_state == DRD_STATE_UNDEFINED)
-			queue_delayed_work(mdwc->sm_usb_wq, &mdwc->sm_work, 0);
-=======
 		if (mdwc->drd_state == DRD_STATE_UNDEFINED){
 			queue_delayed_work(mdwc->sm_usb_wq, &mdwc->sm_work, 0);
 			//schedule_delayed_work(&mdwc->sm_work, 0);
 		}
->>>>>>> ed1d7fc... Kernel: Xiaomi kernel changes for Redmi Note 8 Android P
 		break;
 	default:
 		dev_dbg(mdwc->dev, "%s: unknown event state:%s\n", __func__,
