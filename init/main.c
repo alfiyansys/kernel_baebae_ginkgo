@@ -555,10 +555,6 @@ asmlinkage __visible void __init start_kernel(void)
 	page_alloc_init();
 
 	pr_notice("Kernel command line: %s\n", boot_command_line);
-<<<<<<< HEAD
-	/* parameters may set static keys */
-	jump_label_init();
-=======
 
 	p = NULL;
 	p= strstr(command_line, "androidboot.fpsensor=fpc");
@@ -570,7 +566,6 @@ asmlinkage __visible void __init start_kernel(void)
 		printk("I am goodix fingerprint");
 	}
 
->>>>>>> ed1d7fc... Kernel: Xiaomi kernel changes for Redmi Note 8 Android P
 	parse_early_param();
 	after_dashes = parse_args("Booting kernel",
 				  static_command_line, __start___param,
